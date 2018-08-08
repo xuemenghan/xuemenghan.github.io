@@ -1,0 +1,44 @@
+# Site Settings 站点设置
+title: LittleCurl | IT博客
+email: 424171723@qq.com
+description: 'Java开发者，热爱技术&设计，简单乐观爱创造.' #对博客的一些描述
+baseurl: "/littlecurl.github.io" # the subpath of your site, e.g. /blog
+url: 'https://littlecurl.github.io' #你的GitHub地址
+google_analytics: "UA-XXXXXXXX-X"
+
+# User Settings 博主信息
+username: LittleCurl
+user_description: 'Java开发者，热爱技术&设计，简单乐观爱创造.' #对博主的一些描述
+disqus_username: disqus_username
+
+# Social Media 社交媒体
+# Remove the item if you don't need it
+github_username: littlecurl
+facebook_username: facebook_username
+twitter_username: twitter_username
+instagram_username: instagram_username
+linkedin_username: 刘亚恒
+medium_username: medium_username
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+
+# Plugins
+gems:
+  - jemoji
+
+# Links 来加载 menu 导航
+# For external links add external: true
+# / 表示根目录 我这里就是 littlecurl.github.io这个文件夹
+links:
+  - title: 博客主页
+    url: /
+  - title: 关于博主
+    url: /about/
+  - title: 联系博主
+    url: /contact/
+
+# Exclude my node related stuff
+exclude: ['package.json', 'src', 'node_modules']
