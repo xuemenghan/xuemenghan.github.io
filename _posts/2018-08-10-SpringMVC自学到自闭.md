@@ -1,0 +1,103 @@
+---
+layout: post
+title: "SpringMVC自学到自闭"
+date: 2018/8/10 0:15:34 
+image: 'https://i.imgur.com/AXv7ADL.png'
+description: 万事需坚持，需技巧，虚心请教。<br />走过需担当，需分享，助人助己。
+category: 'Java'
+tags:
+- SpringMVC
+- 解决Bug
+introduction: 自学SpringMVC之后的“忏悔”。
+---
+<div id="Article_catalogue"></div>
+<h2>文章目录</h2>
+* [前言](#Preface)
+* [第一部分：大标题](#1)
+    * [1.1 小标题](#1_1)
+	* [1.2 小标题](#1_2)
+	* [1.3 小标题](#1_3)
+	* [1.4 小标题](#1_4)
+	* [1.5 小标题](#1_5)
+* [第二部分：大标题](#2)
+	* [2.1 小标题](#2_1)
+	* [2.2 小标题](#2_2)
+	* [2.3 小标题](#2_3)
+	* [2.4 小标题](#2_4)
+* [第三部分：大标题](#3)
+	* [3.1 小标题](#3_1)
+* [结尾](#ending)
+
+<br />
+----------
+----------
+
+
+<div id="Preface"><br /></div>
+<h4>前言</h4>
+<div id="1"></div>
+<h4>第一部分：学习之前</h4>	
+<br />
+&emsp;&emsp;这里写可以写一下对接下来的第一部分要写东西的概述。
+<br />
+&emsp;&emsp;[不看第一部分，直接跳转到第二部分：大标题](#2)
+<div id="1_1"></div>
+<h5>1.1&emsp;小标题</h5>
+<div id="1_2"></div>
+<h5>1.2&emsp;小标题</h5>
+<div id="1_3"></div>
+<h5>1.3&emsp;小标题</h5>
+<div id="1_4"></div>
+<h5>1.4&emsp;小标题</h5>
+<div id="1_5"></div>
+<h5>1.5&emsp;小标题</h5>
+<div id="2"></div>
+<h4>第二部分：大标题</h4>
+<br />
+&emsp;&emsp;这里写可以写一下对接下来的第二部分要写东西的概述。
+<br />
+&emsp;&emsp;[不看第二部分，直接跳转到第三部分：大标题](#3)
+<div id="2_1"></div>	
+<h5>2.1&emsp;小标题</h5>
+<div id="2_2"></div>
+<h5>2.2&emsp;小标题</h5>
+<div id="2_3"></div>	
+<h5>2.3&emsp;小标题</h5>
+<div id="2_"></div>	
+<h5>2.4&emsp;小标题</h5>
+<div id="3"></div>	
+<h4>第三部分：大标题</h4>
+&emsp;&emsp;如果这篇博客没有第三部分，那这就是一片垃圾文章！
+<br />
+&emsp;&emsp;这里写可以写一下对接下来的第三部分要写东西的概述。
+<br />
+<div id="3_1"></div>	
+<h5>3.1&emsp;扩展功能</h5>
+<br />
+<div id="ending"></div>
+<h4>结尾</h4>
+<br />
+[正文结束，回到目录看一眼](#Article_catalogue)
+<br />
+<br />
+<br />
+<br />
+这里列出一些曾经帮助过我的文章，表示感谢（排名不分先后）：
+0. [阮一峰的博客](http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html)
+1. [廖雪峰的官方网站](https://www.liaoxuefeng.com/)
+2. [美美王子的博客园](https://www.cnblogs.com/yehui-mmd/p/6286271.html)
+3. [廖柯宇的GitHub主题](https://github.com/kaeyleo/jekyll-theme-H2O)
+4. 还有一些没有记录的CSDN博客和简书、知乎等人的文章。
+<br />
+<br />
+<br />
+----------
+----------
+<br />
+**万事需坚持，需技巧，虚心请教。<br />走过需担当，需分享，助人助己。**
+<br />
+----------
+----------
+<br />
+<br />
+<br />

@@ -10,18 +10,21 @@
 	<li>文章底部添加分享功能&emsp; &emsp; &emsp; &emsp;  &emsp; &emsp; &emsp; &emsp; &emsp;  &ensp; &emsp; &emsp; &emsp;未实现</li>
 	<li>文章底部添加评论功能&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &ensp;&emsp; &emsp; &emsp; 未实现</li>
 	<li>导航栏添加订阅博客，更新通知&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  未实现</li>
-	<li>如果以上功能都能实现，我就加一个赞赏功能&emsp; &emsp; &emsp; &emsp; 未实现</li>
+	<li>导航栏添加每篇文章的目录，如果有的话&emsp; &emsp; &emsp; &emsp; 未实现</li>
 </ol>
 
 ----------
 
-### 移动端，Android版有个Bug（iPhone版没测试过）:
+### 一些Bug:
 
 
 ----------
 
 <ul>
-	<li>文章排版和手机尺寸不匹配&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp;未解决</li>
+	<li>较长链接地址无法自动换行导致文章排版和手机屏幕尺寸不匹配&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp;未解决</li>
+	<li>某些浏览器里面进度条无法读取真实文章长度导致阅读到一半左右，进度条就走到头(设想解决办法是获取图片个数，累加时间)&emsp; &emsp;&emsp; &emsp; &emsp;未解决</li>
+	<li>黑色Toolbar，导致文章内部锚点跳转时遮盖标题&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp;未解决</li>
+	
 </ul>
 
 
