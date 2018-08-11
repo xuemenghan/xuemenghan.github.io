@@ -35,7 +35,7 @@ introduction: 自学SpringMVC之后的“忏悔”。
 	* [2.14 Tomcat报context相关错误](#2_14)
 	* [2.15 Tomcat运行项目无法生成.class文件导致404](#2_15)
 * [第三部分：尽管走下去，不必逗留着](#3)
-	* [3.1 莫愁前路无知己，天下谁人不识君](#3_1)
+	* [3.1 SpringMVC实现上传、下载功能](#3_1)
 * [结尾](#ending)
 
 <br />
@@ -190,7 +190,7 @@ public class TestController {
 ![类名随意起.png]({{site.baseurl}}/assets/img/image/类名随意起.png)
 ![写Controller类.png]({{site.baseurl}}/assets/img/image/写Controller类.png)
 &emsp;&emsp;第五件事，写jsp文件（完整代码如下）：
-```jsp
+```java
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
@@ -246,47 +246,89 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 1. jar包导入出现灵异事件，比如我上面写到的经历，不要复制已有项目的（平常情况下是可以复制的，不知道那次为啥就出事了），从我让你下载的资源文件里面复制，然后重新粘贴到lib目录下，重新配置Build path
 2. jar包导入包不完整（写个SpringMVC基本入门程序用我给发的资源就绝对够了，按照我在第一部分写的步骤导入jar包，应该不会出错）
 3. 只在Build path中Add External JAR，项目的WebRoot/WEB-INF/lib目录下没有jar文件（平常情况下如果在Build path中配置之后，这里没有也没关系，也是不知道为啥有时候lib下没有就会出事）
+总之就一句话，遇到ClassNotFound之后，认真检查自己的jar包。
 <div id="2_4"></div>	
 <h5>2.4&emsp;web.xml中的springMVC配置文件名称</h5>
 &emsp;&emsp;如果你再web.xml中没有写<init-param>相关内容，那么SpringMVC的配置文件名称是“ ***-servlet.xml ”，后面的-servlet是必须的，而且是小写。当然如果你配置了<init-param>相关内容，那么你自己起什么名，就叫什么名。而classpath默认是对应src目录的，当然也可以右键项目名->build path->config...->source->Add进行添加。可有时候，myeclipse只认第一个path，所以把SpringMVC配置文件放到src目录下就行。如果想新在项目根目录下建一个config文件夹来存放配置文件，也可以试试，有时候行，有时候不行。
+<div id="2_5"></div>
+<h5>2.5&emsp;web.xml中的url-pattern</h5>
+&emsp;&emsp;学Strust2的时候web.xml中的<url-pattern>标签内是/*，这里是单纯的一个/。
+<div id="2_6"></div>
+<h5>2.6&emsp;SpringMVC配置文件的命名空间有红叉</h5>
+这种Bug我遇到了三种情况：
+1. 低级错误：<beans 确实右尖括号
+2. 因使用的schemaLocation在MyEclipse中没有，需要手动加入schemaLocation
+3. 因使用的Namespace在MyEclipse中没有，需要手动加入Namespace
+具体添加方法如下图：
+![windows.png]({{site.baseurl}}/assets/img/image/windows.png)
+![点击Add.png]({{site.baseurl}}/assets/img/image/点击Add.png)
+![选择schema.png]({{site.baseurl}}/assets/img/image/选择schema.png)
+![5个schema概览.png]({{site.baseurl}}/assets/img/image/5个schema概览.png)
+![其他四个同理.png]({{site.baseurl}}/assets/img/image/其他四个同理.png)
+![添加两次.png]({{site.baseurl}}/assets/img/image/添加两次.png)
+![结果显示.png]({{site.baseurl}}/assets/img/image/结果显示.png)
+<div id="2_7"></div>
+<h5>2.7&emsp;SpringMVC配置自动扫描包名不一致</h5>
+```java
+<!-- 配置自动扫描包 -->
+<context:component-scan base-package="springmvc.controller" />
+```
+&emsp;&emsp;在SpringMVC的配置文件中配置的base-package后面的包名一定要和你在src目录下新建的包名相同，不要犯多或少字母或者这里大写那里小写这样的低级错误。
+<div id="2_8"></div>
+<h5>2.8&emsp;SpringMVC配置jsp路径与实际不一致</h5>
+```java
+<!-- 视图解析器  InternalResourceViewResolver.class源码中用到了JSTL，所以SpringMVC需要加入JSTL的jar包 -->
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="viewClass"  value="org.springframework.web.servlet.view.JstlView"></property>
+	<property name="prefix" value="/WEB-INF/jsp/"></property>
+	<property name="suffix" value=".jsp"></property>
+</bean>
+```
+&emsp;&emsp;视图解析器里有一句<property name="prefix" value="/WEB-INF/jsp/"></property>，这里的value声明了你的jsp页面该放到哪个目录下，一定要和自己新建的文件夹名称相同。
+<div id="2_9"></div>
+<h5>2.9&emsp;SpringMVC配置文件忘写注解驱动</h5>
+```java
+<!-- 配置mvc：annotation-driven -->
+<mvc:annotation-driven></mvc:annotation-driven>
+```
+&emsp;&emsp;如果你是使用注解的方式来写Controller这样的java类，那么这里就要加上注解驱动。总之一句话，SpringMVC配置文件中5个东西，不要错，不要少。
+<div id="2_10"></div>
+<h5>2.10&emsp;Controller类返回信息错误</h5>
+&emsp;&emsp;自己写的Java类中有一个return "success";返回的是jsp页面的名称，因为在SpringMVC的配置文件中视图解析器定义了后缀名，所以这里不用带.jsp的后缀。
+<div id="2_11"></div>
+<h5>2.11&emsp;Controller注解url与实际url不一致导致404</h5>
+&emsp;&emsp;自己写的Java类中在方法上方有一个注解@RequestMapping("/test")这里面的/test就是浏览器地址栏里面要填写的，一定要对应，不要错，不要这里写的是小写浏览器地址栏写的是大写。
+<div id="2_12"></div>
+<h5>2.12&emsp;jsp文件名称与Controller类返回名称不一致导致404</h5>
+&emsp;&emsp;自己写的Java类中有一个return "success";那么就应该有一个success.jsp页面与之对应。
+<div id="2_13"></div>
+<h5>2.13&emsp;Tomcat端口号被占用导致无法启动</h5>
+&emsp;&emsp;让你下载的Tomcat解压之后路径里面有config-server.xml文件，用notepad++打开。修改三个端口号，修改的总原则是不要小于1024，不要大于65535，简单的做法就是把8改成9或者7、6、5、4、3、2随便选一个，改完之后一般就不会再端口冲突了，除非很巧，你改的那个端口依然有应用在使用，比如你改个3306，那是mysql的端口号。
+![路径右键打开.png]({{site.baseurl}}/assets/img/image/路径右键打开.png)
+![第一个端口号.png]({{site.baseurl}}/assets/img/image/第一个端口号.png)
+![第二个端口号.png]({{site.baseurl}}/assets/img/image/第二个端口号.png)
+![第三个端口号.png]({{site.baseurl}}/assets/img/image/第三个端口号.png)
+<div id="2_14"></div>
+<h5>2.14&emsp;Tomcat报context相关错误</h5>
+&emsp;&emsp;类似于下面这样的报错
+![context错误.png]({{site.baseurl}}/assets/img/image/context错误.png)
+&emsp;&emsp;需要做的事情是，在Tomcat配置文件conf-server的最后有Context标签，将其内容删除，然后报错，从新运行发布Tomcat。这里有个小细节，Context标签的最后还有一个Host的结束标签</Host>不要把它也带着删了，否则Tomcat还是会报错。
+![Context内容.png]({{site.baseurl}}/assets/img/image/Context内容.png)
+<div id="2_15"></div>
+<h5>2.15&emsp;Tomcat运行项目无法生成.class文件导致404</h5>
+&emsp;&emsp;如果你的JRE导入正确，一般情况想不是没有生成.class文件，而是.class文件生成的目录位置不正确。这里贴个链接：[解决办法](https://blog.csdn.net/imx_x/article/details/51699115)
+<div id="3"></div>	
+<h4>第三部分：SpringMVC实现上传、下载功能</h4>
 <!--
 ![]({{site.baseurl}}/assets/img/image/)
 -->
-<div id="2_5"></div>
-<h5>2.5&emsp;web.xml中的url-pattern</h5>
-<div id="2_6"></div>
-<h5>2.6&emsp;SpringMVC配置文件的命名空间有红叉</h5>
-<div id="2_7"></div>
-<h5>2.7&emsp;SpringMVC配置自动扫描包名不一致</h5>
-<div id="2_8"></div>
-<h5>2.8&emsp;SpringMVC配置jsp路径与实际不一致</h5>
-<div id="2_9"></div>
-<h5>2.9&emsp;SpringMVC配置文件忘写注解驱动</h5>
-<div id="2_10"></div>
-<h5>2.10&emsp;Controller类返回信息错误</h5>
-<div id="2_11"></div>
-<h5>2.11&emsp;Controller注解url与实际url不一致导致404</h5>
-<div id="2_12"></div>
-<h5>2.12&emsp;jsp文件名称与Controller类返回名称不一致导致404</h5>
-<div id="2_13"></div>
-<h5>2.13&emsp;Tomcat端口号被占用导致无法启动</h5>
-<div id="2_14"></div>
-<h5>2.14&emsp;Tomcat报context相关错误</h5>
-<div id="2_15"></div>
-<h5>2.15&emsp;Tomcat运行项目无法生成.class文件导致404</h5>
-<div id="3"></div>	
-<h4>第三部分：尽管走下去，不必逗留着</h4>
-&emsp;&emsp;如果这篇博客没有第三部分，那这就是一片垃圾文章！
+&emsp;&emsp;
 <br />
 emsp;&emsp;分享一句话：<br />
 emsp;&emsp;尽管走下去，不必逗留着，去采鲜花来保存，因为在这一路上，花自然会继续开放。----泰戈尔
 <br />
 <div id="3_1"></div>	
 <h5>3.1&emsp;莫愁前路无知己，天下谁人不识君</h5>
-
-
-
-
 <br />
 <div id="ending"></div>
 <h4>结尾</h4>
@@ -297,11 +339,9 @@ emsp;&emsp;尽管走下去，不必逗留着，去采鲜花来保存，因为在
 <br />
 <br />
 这里列出一些曾经帮助过我的文章，表示感谢（排名不分先后）：
-0. [阮一峰的博客](http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html)
-1. [廖雪峰的官方网站](https://www.liaoxuefeng.com/)
-2. [美美王子的博客园](https://www.cnblogs.com/yehui-mmd/p/6286271.html)
-3. [廖柯宇的GitHub主题](https://github.com/kaeyleo/jekyll-theme-H2O)
-4. 还有一些没有记录的CSDN博客和简书、知乎等人的文章。
+0. [imx_x的CSDN](https://blog.csdn.net/imx_x/article/details/51699115)
+1. [colorandsong](https://blog.csdn.net/colorandsong/article/details/34435681)
+2. 还有一些没有记录的CSDN博客和简书、知乎等人的文章。
 <br />
 <br />
 <br />
