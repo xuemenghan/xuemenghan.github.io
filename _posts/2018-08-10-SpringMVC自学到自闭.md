@@ -36,6 +36,10 @@ introduction: 自学SpringMVC之后的“忏悔”。
 	* [2.15 Tomcat运行项目无法生成.class文件导致404](#2_15)
 * [第三部分：尽管走下去，不必逗留着](#3)
 	* [3.1 SpringMVC实现上传、下载功能](#3_1)
+	* [3.2 SpringMVC表单标签](#3_2)
+	* [3.3 SpringMVC数据校验](#3_3)
+	* [3.4 SpringMVC数据格式化](#3_4)
+	* [3.5 SpringMVC整合Spring](#3_5)
 * [结尾](#ending)
 
 <br />
@@ -326,6 +330,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <br />
 <div id="3_1"></div>	
 <h5>3.1&emsp;莫愁前路无知己，天下谁人不识君</h5>
+
+
+
+MyEclipse不提供页面下载功能！
+
+
+
 <br />
 <div id="ending"></div>
 <h4>结尾</h4>
