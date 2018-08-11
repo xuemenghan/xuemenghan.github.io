@@ -51,13 +51,13 @@ introduction: 自学SpringMVC之后的“忏悔”。
 <br />
 &emsp;&emsp;要做到手把手，最直接的就是上视频，但是录制一个视频，不易呈现，而且视频的资源占用特别大，所以我倾向使用截图的方式，每一步操作都有截图，每一步操作都有解释，就连xml文件中的命名空间都给你说道说道。我还写了较为详细的目录来定位文章，读者可以根据目录快速跳转到自己需要的地方。
 <br />
-&emsp;&emsp;[不看第一部分，直接跳转到第二部分：大标题](#2)
+&emsp;&emsp;[不看第一部分，直接跳转到第二部分：解决让人自闭的Bug](#2)
 <div id="1_1"></div>
 <h5>1.1&emsp;环境准备</h5>
 &emsp;&emsp;既然你都来学习SpringMVC了（这属于JavaEE的内容），那你Java环境肯定已经搭建好了，比如说JDK、环境变量、Eclipse、MyEclipse都已经安装且配置了（这属于JavaSE的内容）。
 &emsp;&emsp;JavaSE的资源我就不给你贴链接了，有需要的可以给我发邮箱联系我。这里我把SpringMVC所用的一些资源贴给你，点击下图或者链接进行下载：<br />
 [百度网盘资源](https://pan.baidu.com/s/15NT9M4B8WMmeBryN2lNn0w)
-[![四个资源文件.png]({{site.baseurl}}/assets/img/image/四个资源文件.png)](https://pan.baidu.com/s/15NT9M4B8WMmeBryN2lNn0w)
+[![四个资源文件.png](https://i.imgur.com/YbShaST.png)](https://pan.baidu.com/s/15NT9M4B8WMmeBryN2lNn0w)
 <h6>资源解释</h6>
 &emsp;&emsp;前两个是Tomcat7和9，两个不同版本，任意挑一个，或者两个都下载，Tomcat是免安装的，解压到本地，然后Eclipse或者MyEclipse中配置一下就能使用了。Eclipse中配置Tomcat键具体步骤链接(MyEclipse同理)：[百度经验](https://jingyan.baidu.com/article/3065b3b6efa9d7becff8a4c6.html)
 <br />
@@ -67,22 +67,22 @@ introduction: 自学SpringMVC之后的“忏悔”。
 <div id="1_2"></div>
 <h5>1.2&emsp;新建项目</h5>
 &emsp;&emsp;我用的是MyEclipse具体步骤：File->new->web project(Eclipse中是Dynamic Web Project)->填写项目信息->Next->Next->Finish  如下图：<br />
-![newWebProject.png]({{site.baseurl}}/assets/img/image/newWebProject.png)
-![填写信息.png]({{site.baseurl}}/assets/img/image/填写信息.png)
-![继续Next.png]({{site.baseurl}}/assets/img/image/继续Next.png)
-![勾上web继续Next.png]({{site.baseurl}}/assets/img/image/勾上web继续Next.png)
-![直接Finish.png]({{site.baseurl}}/assets/img/image/直接Finish.png)
-![有时候需要断网.png]({{site.baseurl}}/assets/img/image/有时候需要断网.png)
+![newWebProject.png](https://i.imgur.com/JvqYbhE.png)
+![填写信息.png](https://i.imgur.com/OUB0LRB.png)
+![继续Next.png](https://i.imgur.com/oetR0aw.png)
+![勾上web继续Next.png](https://i.imgur.com/YxXZ0lt.png)
+![直接Finish.png](https://i.imgur.com/qNi64qt.png)
+![有时候需要断网.png](https://i.imgur.com/C8YCq5a.png)
 <div id="1_3"></div>
 <h5>1.3&emsp;五件事情</h5>
 &emsp;&emsp;在做接下来的五件事之前，先看一眼新建项目的目录树：
-![新建目录树.png]({{site.baseurl}}/assets/img/image/新建目录树.png)
+![新建目录树.png](https://i.imgur.com/oHhCwQ7.png)
 &emsp;&emsp;第一件事，添加Jar包：
-![buildpath.png]({{site.baseurl}}/assets/img/image/buildpath.png)
-![ExternalJAR.png]({{site.baseurl}}/assets/img/image/ExternalJAR.png)
-![全选JAR.png]({{site.baseurl}}/assets/img/image/全选JAR.png)
-![Apply-OK.png]({{site.baseurl}}/assets/img/image/Apply-OK.png)
-![添加好依赖库之后的目录树.png]({{site.baseurl}}/assets/img/image/添加好依赖库之后的目录树.png)
+![buildpath.png](https://i.imgur.com/DAyj1mD.png)
+![ExternalJAR.png](https://i.imgur.com/xPQ9ovZ.png)
+![全选JAR.png](https://i.imgur.com/zsZeuEb.png)
+![Apply-OK.png](https://i.imgur.com/febJZD5.png)
+![添加好依赖库之后的目录树.png](https://i.imgur.com/1PaMd4B.png)
 &emsp;&emsp;第二件事，配置web.xml（完整代码如下）：
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -114,7 +114,7 @@ introduction: 自学SpringMVC之后的“忏悔”。
 </web-app>
 ```
 web.xml在我项目中的截图:
-![webxml文件.png]({{site.baseurl}}/assets/img/image/webxml文件.png)
+![webxml文件.png](https://i.imgur.com/QT8x8yD.png)
 &emsp;&emsp;第三件事，配置springmvc.xml（完整代码如下）：
 ```xml
 <!-- 
@@ -165,8 +165,8 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 
 ```
 springmvc.xml在我项目中的截图:
-![SpringMVC命名空间.png]({{site.baseurl}}/assets/img/image/SpringMVC命名空间.png)
-![配置5个工具.png]({{site.baseurl}}/assets/img/image/配置5个工具.png)
+![SpringMVC命名空间.png](https://i.imgur.com/ViTyNIF.png)
+![配置5个工具.png](https://i.imgur.com/7vyJM2D.png)
 &emsp;&emsp;第四件事，新建包，写java文件（完整代码如下）：
 ```java
 package springmvc.controller;
@@ -184,11 +184,11 @@ public class TestController {
 }
 ```
 具体步骤截图：
-![根据自动扫描包建包.png]({{site.baseurl}}/assets/img/image/根据自动扫描包建包.png)
-![包名.png]({{site.baseurl}}/assets/img/image/包名.png)
-![建类.png]({{site.baseurl}}/assets/img/image/建类.png)
-![类名随意起.png]({{site.baseurl}}/assets/img/image/类名随意起.png)
-![写Controller类.png]({{site.baseurl}}/assets/img/image/写Controller类.png)
+![根据自动扫描包建包.png](https://i.imgur.com/s04bv8U.png)
+![包名.png](https://i.imgur.com/LCQpKur.png)
+![建类.png](https://i.imgur.com/fNlqAgj.png)
+![类名随意起.png](https://i.imgur.com/fisZWCU.png)
+![写Controller类.png](https://i.imgur.com/2EwZ5OS.png)
 &emsp;&emsp;第五件事，写jsp文件（完整代码如下）：
 ```java
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
@@ -219,11 +219,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 ```
 步骤如下图所示：
-![写jsp页面.png]({{site.baseurl}}/assets/img/image/写jsp页面.png)
+![写jsp页面.png](https://i.imgur.com/2N6XVy3.png)
 &emsp;&emsp;五件事做完之后就是右键项目->Run As->...,具体如下图：
-![RunAs.png]({{site.baseurl}}/assets/img/image/RunAs.png)
+![RunAs.png](https://i.imgur.com/k2UM4OR.png)
 &emsp;&emsp;接着MyEclipse会弹出一个网页，在地址栏末尾写上test，然后回车，大功告成！
-![大功告成.png]({{site.baseurl}}/assets/img/image/大功告成.png)
+![大功告成.png](https://i.imgur.com/NcfMIRQ.png)
 <div id="2"></div>
 <h4>第二部分：解决让人自闭的Bug</h4>
 <br />
@@ -233,7 +233,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div id="2_1"></div>	
 <h5>2.1&emsp;发生“灵异事件”导致404</h5>
 &emsp;&emsp;404有很多种情况，有的可能是因为Jar包导入的不对，有次我的项目就发生“灵异事件”了，我新建第一个项目，一切jar包都是导入的，可以运行，等我新建第二个项目的时候，我是复制第一个项目lib下的文件，本来一个jar包是分三种的，有.jar、javadoc.jar、sources.jar：
-![三种jar包.png]({{site.baseurl}}/assets/img/image/三种jar包.png)
+![三种jar包.png](https://i.imgur.com/SJmlnip.png)
 &emsp;&emsp;可是我复制过去之后myeclipse竟然就自动给我导入了，我还欣喜，MyEclipse就是高级啊，结果我那个项目折腾了一上午无论如何也是跑不起来，我还纳闷呢，第一个项目咋就能跑起来呢？在我快要自闭的时候，我一个文件一个文件审查，连导入的jar文件也审查一遍，结果当我打开jar依赖库的时候，吓出了一身冷汗，本来只有javadoc.jar和javasource.jar这两种jar包里面是.html文件，很奇怪的是，就连单纯.jar这种jar包里面的文件也都是.html。最后我把这个依赖库删除，然后把lib目录下从上个项目里复制的jar文件删除，乖乖的从我让你下载的那四个资源中解压出来的jar包集合中复制jar文件到lib目录下，myeclipse竟然又自动给我导入了，我把它自动导入的依赖库删除，然后自己手动配置buildpath，就像第一个新建的项目一样。再次运行，这次这个Bug就解决了。.
 <br />
 &emsp;&emsp;除了这个灵异事件导致404之外，还有很多种情况都能导致404，我在下面有具体细分。
@@ -260,13 +260,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 2. 因使用的schemaLocation在MyEclipse中没有，需要手动加入schemaLocation
 3. 因使用的Namespace在MyEclipse中没有，需要手动加入Namespace
 具体添加方法如下图：
-![windows.png]({{site.baseurl}}/assets/img/image/windows.png)
-![点击Add.png]({{site.baseurl}}/assets/img/image/点击Add.png)
-![选择schema.png]({{site.baseurl}}/assets/img/image/选择schema.png)
-![5个schema概览.png]({{site.baseurl}}/assets/img/image/5个schema概览.png)
-![其他四个同理.png]({{site.baseurl}}/assets/img/image/其他四个同理.png)
-![添加两次.png]({{site.baseurl}}/assets/img/image/添加两次.png)
-![结果显示.png]({{site.baseurl}}/assets/img/image/结果显示.png)
+![windows.png](https://i.imgur.com/RUUltUX.png)
+![点击Add.png](https://i.imgur.com/qFQT2H7.png)
+![选择schema.png](https://i.imgur.com/eK42p1o.png)
+![5个schema概览.png](https://i.imgur.com/ro4lbT0.png)
+![其他四个同理.png](https://i.imgur.com/O9b7dtg.png)
+![添加两次.png](https://i.imgur.com/HSctizI.png)
+![结果显示.png](https://i.imgur.com/8qStEDy.png)
 <div id="2_7"></div>
 <h5>2.7&emsp;SpringMVC配置自动扫描包名不一致</h5>
 ```java
@@ -304,28 +304,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div id="2_13"></div>
 <h5>2.13&emsp;Tomcat端口号被占用导致无法启动</h5>
 &emsp;&emsp;让你下载的Tomcat解压之后路径里面有config-server.xml文件，用notepad++打开。修改三个端口号，修改的总原则是不要小于1024，不要大于65535，简单的做法就是把8改成9或者7、6、5、4、3、2随便选一个，改完之后一般就不会再端口冲突了，除非很巧，你改的那个端口依然有应用在使用，比如你改个3306，那是mysql的端口号。
-![路径右键打开.png]({{site.baseurl}}/assets/img/image/路径右键打开.png)
-![第一个端口号.png]({{site.baseurl}}/assets/img/image/第一个端口号.png)
-![第二个端口号.png]({{site.baseurl}}/assets/img/image/第二个端口号.png)
-![第三个端口号.png]({{site.baseurl}}/assets/img/image/第三个端口号.png)
+![路径右键打开.png](https://i.imgur.com/U1jRypJ.png)
+![第一个端口号.png](https://i.imgur.com/l8H6Qak.png)
+![第二个端口号.png](https://i.imgur.com/GBP9oq1.png)
+![第三个端口号.png](https://i.imgur.com/qRh1Avj.png)
 <div id="2_14"></div>
 <h5>2.14&emsp;Tomcat报context相关错误</h5>
 &emsp;&emsp;类似于下面这样的报错
-![context错误.png]({{site.baseurl}}/assets/img/image/context错误.png)
+![context错误.png](https://i.imgur.com/jk0KyTQ.png)
 &emsp;&emsp;需要做的事情是，在Tomcat配置文件conf-server的最后有Context标签，将其内容删除，然后报错，从新运行发布Tomcat。这里有个小细节，Context标签的最后还有一个Host的结束标签</Host>不要把它也带着删了，否则Tomcat还是会报错。
-![Context内容.png]({{site.baseurl}}/assets/img/image/Context内容.png)
+![Context内容.png](https://i.imgur.com/qi2W64S.png)
 <div id="2_15"></div>
 <h5>2.15&emsp;Tomcat运行项目无法生成.class文件导致404</h5>
 &emsp;&emsp;如果你的JRE导入正确，一般情况想不是没有生成.class文件，而是.class文件生成的目录位置不正确。这里贴个链接：[解决办法](https://blog.csdn.net/imx_x/article/details/51699115)
 <div id="3"></div>	
 <h4>第三部分：SpringMVC实现上传、下载功能</h4>
-<!--
-![]({{site.baseurl}}/assets/img/image/)
--->
 &emsp;&emsp;
 <br />
-emsp;&emsp;分享一句话：<br />
-emsp;&emsp;尽管走下去，不必逗留着，去采鲜花来保存，因为在这一路上，花自然会继续开放。----泰戈尔
+&emsp;&emsp;分享一句话：<br />
+&emsp;&emsp;尽管走下去，不必逗留着，去采鲜花来保存，因为在这一路上，花自然会继续开放。----泰戈尔
 <br />
 <div id="3_1"></div>	
 <h5>3.1&emsp;莫愁前路无知己，天下谁人不识君</h5>
