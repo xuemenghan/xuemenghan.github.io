@@ -3,7 +3,7 @@ layout: post
 title: "Android项目Bug汇总记录"
 date: 2018/8/14 12:02:22 
 image: 'https://i.imgur.com/xroiTH7.png'
-description: 万事需坚持，需技巧，虚心请教。<br />走过需担当，需分享，助人助己。
+description: 业精于勤，荒于嬉；<br />行成于思，毁于随。
 category: 'Android'
 tags:
 - Android
