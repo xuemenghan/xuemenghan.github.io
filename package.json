@@ -1,14 +1,14 @@
 {
-  "name": "thiagorossener.github.io",
+  "name": "littlecurl.github.io",
   "version": "1.0.0",
-  "description": "Blog pessoal de Thiago Rossener.",
+  "description": "刘亚恒的个人博客",
   "main": "gulpfile.js",
   "scripts": {
     "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thiagorossener/thiagorossener.github.io.git"
+    "url": "git+https://github.com/littlecurl/littlecurl.github.io.git"
   },
   "keywords": [
     "jekyll",
@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/thiagorossener/thiagorossener.github.io/issues"
   },
-  "homepage": "https://github.com/thiagorossener/thiagorossener.github.io#readme",
+  "homepage": "https://github.com/littlecurl/littlecurl.github.io#readme",
   "devDependencies": {
     "autoprefixer-stylus": "^0.14.0",
     "browser-sync": "^2.18.13",
