@@ -22,7 +22,8 @@ medium_username: medium_username
 
 # Build settings
 markdown: kramdown
-highlighter: rouge
+#highlighter: rouge
+highlighter: pygments
 permalink: /:title/
 
 # Plugins
