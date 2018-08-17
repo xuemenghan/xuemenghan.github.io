@@ -452,6 +452,9 @@ body.main-page .bar-header{background-color:rgba(0,0,0,0.7)}
 
 
 .icon-clock,.icon-calendar{width:.938rem;height:.938rem;fill:#a9a9a9;vertical-align:middle;margin-right:.188rem}
+
+
+
 .post-content .tags{width:auto;max-width:50rem;float:none;display:block;margin-right:auto;margin-left:auto;padding-left:0;padding-right:0;font-family:'Titillium Web','Helvetica Neue',Helvetica,sans-serif;font-weight:400;font-style:normal;font-size:1.125rem;margin:0 auto 1.813rem;margin-top:1.875rem;letter-spacing:.01rem;line-height:2.5rem;}
 .post-content .tags::after{content:'';display:table;clear:both}
 @media only screen and (min-width:37.5rem){.post-content .tags{font-size:1.25rem;letter-spacing:.05rem}}

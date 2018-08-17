@@ -21,9 +21,8 @@ linkedin_username: 刘亚恒
 medium_username: medium_username
 
 # Build settings
-#highlighter: rouge
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 permalink: /:title/
 
 # Plugins
