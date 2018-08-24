@@ -116,6 +116,14 @@ public class Offer1 {
 <br />
 <br />
 <br />
+这里列出一些曾经帮助过我的文章，表示感谢（排名不分先后）：
+1. [牛客网原题](https://www.nowcoder.com/practice/abc3fe2ce8e146608e868a70efebf62e?tpId=13&tqId=11154&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
+2. [岁月淡忘了谁的博客园](https://www.cnblogs.com/henuyuxiang/p/6215663.html)
+3. [遥同学的CSDN博客](https://blog.csdn.net/qq_15062527/article/details/48845957)
+4. 还有一些没有记录的CSDN博客和简书、知乎等人的文章。
+<br />
+<br />
+<br />
 ----------
 ----------
 <br />
