@@ -1,9 +1,9 @@
-# Site Settings 站点设置
+﻿# Site Settings 站点设置
 title: LittleCurl | IT博客
 email: 424171723@qq.com
 description: 'Java开发者，热爱技术&设计，简单乐观爱创造.' #对博客的一些描述
-baseurl: "/littlecurl.github.io" # the subpath of your site, e.g. /blog
-url: 'https://littlecurl.github.io' #你的GitHub地址
+baseurl: "/xuemenghan.github.io" # the subpath of your site, e.g. /blog
+url: 'https://xuemenghan.github.io' #你的GitHub地址
 google_analytics: "UA-XXXXXXXX-X"
 
 # User Settings 博主信息
